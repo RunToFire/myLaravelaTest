@@ -13,7 +13,8 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        'App\Model' => 'App\Policies\ModelPolicy',
+        //'App\Model' => 'App\Policies\ModelPolicy',
+        'App\Post' => 'App\Policies\PostPolicy',
     ];
 
     /**
@@ -25,6 +26,11 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+        $permissions = \App\AdminPermission::with('roles')->get();
+        foreach ($permissions as $permission) {
+            Gate::define($permission->name, function($user) use($permission) {
+                return $user->hasPermission($permission);
+            });
+        }
     }
 }
