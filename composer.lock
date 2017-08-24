@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "ca41b66a0e1898cf79aa0118554dc0b4",
+    "content-hash": "79c4d737d2246fda3222c943b1d083b6",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -307,16 +307,16 @@
         },
         {
             "name": "guzzlehttp/guzzle",
-            "version": "6.2.3",
+            "version": "6.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "8d6c6cc55186db87b7dc5009827429ba4e9dc006"
+                "reference": "f4db5a78a5ea468d4831de7f0bf9d9415e348699"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://files.phpcomposer.com/files/guzzle/guzzle/8d6c6cc55186db87b7dc5009827429ba4e9dc006.zip",
-                "reference": "8d6c6cc55186db87b7dc5009827429ba4e9dc006",
+                "url": "https://files.phpcomposer.com/files/guzzle/guzzle/f4db5a78a5ea468d4831de7f0bf9d9415e348699.zip",
+                "reference": "f4db5a78a5ea468d4831de7f0bf9d9415e348699",
                 "shasum": ""
             },
             "require": {
@@ -326,8 +326,11 @@
             },
             "require-dev": {
                 "ext-curl": "*",
-                "phpunit/phpunit": "^4.0",
+                "phpunit/phpunit": "^4.0 || ^5.0",
                 "psr/log": "^1.0"
+            },
+            "suggest": {
+                "psr/log": "Required for using the Log middleware"
             },
             "type": "library",
             "extra": {
@@ -365,7 +368,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2017-02-28T22:50:30+00:00"
+            "time": "2017-06-22T18:50:49+00:00"
         },
         {
             "name": "guzzlehttp/promises",
@@ -802,16 +805,16 @@
         },
         {
             "name": "laravel/scout",
-            "version": "v3.0.5",
+            "version": "v3.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/scout.git",
-                "reference": "547ff55530a16e31b3b1142dd4dfdb654ad2bae0"
+                "reference": "b899432186096dacc90700d5320d95cc3db1efe1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://files.phpcomposer.com/files/laravel/scout/547ff55530a16e31b3b1142dd4dfdb654ad2bae0.zip",
-                "reference": "547ff55530a16e31b3b1142dd4dfdb654ad2bae0",
+                "url": "https://files.phpcomposer.com/files/laravel/scout/b899432186096dacc90700d5320d95cc3db1efe1.zip",
+                "reference": "b899432186096dacc90700d5320d95cc3db1efe1",
                 "shasum": ""
             },
             "require": {
@@ -835,6 +838,11 @@
             "extra": {
                 "branch-alias": {
                     "dev-master": "3.0-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Laravel\\Scout\\ScoutServiceProvider"
+                    ]
                 }
             },
             "autoload": {
@@ -858,7 +866,7 @@
                 "laravel",
                 "search"
             ],
-            "time": "2017-06-01T13:21:09+00:00"
+            "time": "2017-07-12T18:42:43+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -2441,16 +2449,16 @@
         },
         {
             "name": "tamayo/laravel-scout-elastic",
-            "version": "3.0.3",
+            "version": "3.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ErickTamayo/laravel-scout-elastic.git",
-                "reference": "929184da8e4aef1fe6ba458cbd8ae433ea1008d9"
+                "reference": "25be7263dd4be9f5c330afb59cb3ab2f7fd69836"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://files.phpcomposer.com/files/ErickTamayo/laravel-scout-elastic/929184da8e4aef1fe6ba458cbd8ae433ea1008d9.zip",
-                "reference": "929184da8e4aef1fe6ba458cbd8ae433ea1008d9",
+                "url": "https://files.phpcomposer.com/files/ErickTamayo/laravel-scout-elastic/25be7263dd4be9f5c330afb59cb3ab2f7fd69836.zip",
+                "reference": "25be7263dd4be9f5c330afb59cb3ab2f7fd69836",
                 "shasum": ""
             },
             "require": {
@@ -2480,7 +2488,7 @@
                 "laravel",
                 "scout"
             ],
-            "time": "2017-04-24T18:21:22+00:00"
+            "time": "2017-08-08T01:39:27+00:00"
         },
         {
             "name": "tijsverkoyen/css-to-inline-styles",

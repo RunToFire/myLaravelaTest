@@ -41,17 +41,12 @@ class ESInit extends Command
         $client = new Client();
         // 创建模版
         $url = config('scout.elasticsearch.hosts')[0] . '/_template/tmp';
+        $client->delete($url);
         $client->put($url, [
             'json' => [
                 'template' => config('scout.elasticsearch.index'),
-                'settings' => [
-                    'number_of_shards' => 1
-                ],
                 'mappings' => [
                     '_default_' => [
-                        '_all' => [
-                            'enabled' => true
-                        ],
                         'dynamic_templates' => [
                             [
                                 'strings' => [
@@ -73,8 +68,10 @@ class ESInit extends Command
                 ]
             ]
         ]);
-
+         $this->info("=====创建模版成功====");
+        //创建索引
         $url = config('scout.elasticsearch.hosts')[0] . '/' . config('scout.elasticsearch.index');
+        $client->delete($url);
         $client->put($url, [
             'json' => [
                 'settings' => [
@@ -91,6 +88,6 @@ class ESInit extends Command
                 ]
             ]
         ]);
-
+          $this->info("=====创建索引成功====");
     }
 }
