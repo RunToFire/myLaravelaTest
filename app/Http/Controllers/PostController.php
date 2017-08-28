@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
-
+use EndaEditor;
 class PostController extends Controller
 {
     /*
@@ -14,14 +14,16 @@ class PostController extends Controller
     {
         $user = \Auth::user();
         $posts = Post::aviable()->orderBy('created_at', 'desc')->withCount(["zans", "comments"])->with(['user'])->paginate(6);
-
-        return view('post/index', compact('posts'));
+        $arts = compact('posts');
+        return view('post/index', $arts);
     }
 
     public function imageUpload(Request $request)
     {
-        $path = $request->file('wangEditorH5File')->storePublicly(md5(\Auth::id() . time()));
-        return asset('storage/'. $path);
+        $data = EndaEditor::uploadImgFile('endaEdit');
+        return json_encode($data); 
+        // $path = $request->file('wangEditorH5File')->storePublicly(md5(\Auth::id() . time()));
+        // return asset('storage/'. $path);
     }
 
     public function create()

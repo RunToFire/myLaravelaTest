@@ -180,6 +180,8 @@ return [
         Laravel\Scout\ScoutServiceProvider::class,
         ScoutEngines\Elasticsearch\ElasticsearchProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
+        YuanChao\Editor\EndaEditorServiceProvider::class
+
 
     ],
 
@@ -229,7 +231,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-
+        'EndaEditor' => YuanChao\Editor\Facade\EndaEditorFacade::class,
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
     ],
 

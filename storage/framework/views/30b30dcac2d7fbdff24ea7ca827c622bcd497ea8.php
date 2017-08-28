@@ -10,7 +10,7 @@
                 <h2 class="blog-post-title"><a href="/posts/<?php echo e($post->id); ?>" ><?php echo e($post->title); ?></a></h2>
                 <p class="blog-post-meta"><?php echo e($post->created_at->toFormattedDateString()); ?> by <a href="/user/<?php echo e($post->user_id); ?>"><?php echo e($post->user->name); ?></a></p>
 
-                <p><?php echo str_limit($post->content, 200, '...'); ?></p>
+                <p><?php echo str_limit(EndaEditor::MarkDecode($post->content, 200, '...')); ?></p>
             </div>
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 

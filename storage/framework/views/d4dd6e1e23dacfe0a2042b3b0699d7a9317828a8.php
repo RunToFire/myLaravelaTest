@@ -1,4 +1,5 @@
 <?php $__env->startSection("content"); ?>
+<?php echo $__env->make('vendor.editor.head', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
     <div class="col-sm-8 blog-main">
         <form action="/posts" method="POST">
@@ -10,7 +11,9 @@
             </div>
             <div class="form-group">
                 <label>内容</label>
-                <textarea id="content"  style="height:400px;max-height:500px;" name="content" class="form-control" placeholder="这里是内容"></textarea>
+                <div class="editor">
+                    <textarea id='myEditor'  style="height:400px;max-height:500px;" name="content" class="form-control" placeholder="这里是内容" ></textarea>
+                </div>
             </div>
             <?php echo $__env->make("layout.error", array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
             <button type="submit" class="btn btn-default">提交</button>

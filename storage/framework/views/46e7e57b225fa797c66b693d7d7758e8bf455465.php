@@ -19,7 +19,7 @@
 
             <p class="blog-post-meta"><?php echo e($post->created_at->toFormattedDateString()); ?> by <a href="#"><?php echo e($post->user->name); ?></a></p>
 
-            <p><?php echo $post->content; ?></p>
+            <p><?php echo EndaEditor::MarkDecode($post->content); ?></p>
             <div>
                 <?php if($post->zan(\Auth::id())->exists()): ?>
                     <a href="/posts/<?php echo e($post->id); ?>/unzan" type="button" class="btn btn-default btn-lg">取消赞</a>

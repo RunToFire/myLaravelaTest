@@ -22,7 +22,7 @@
 
             <p class="blog-post-meta">{{$post->created_at->toFormattedDateString()}} by <a href="#">{{$post->user->name}}</a></p>
 
-            <p>{!! $post->content !!}</p>
+            <p>{!! EndaEditor::MarkDecode($post->content) !!}</p>
             <div>
                 @if($post->zan(\Auth::id())->exists())
                     <a href="/posts/{{$post->id}}/unzan" type="button" class="btn btn-default btn-lg">取消赞</a>
